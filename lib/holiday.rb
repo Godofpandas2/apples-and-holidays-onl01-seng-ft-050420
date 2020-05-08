@@ -82,7 +82,8 @@ def all_supplies_in_holidays(holiday_hash)
   # etc.
   holiday_hash.each do |seasons, holidays|
     if seasons == :winter || :summer
-      return seasons.keys
+      holidays.each do |holiday, items|
+        return "#{holiday}: #{items}"
     end
   end
 end
